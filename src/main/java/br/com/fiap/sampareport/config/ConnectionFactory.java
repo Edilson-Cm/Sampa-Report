@@ -10,8 +10,8 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 
     private static final String URL = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL";
-    private static final String USER = "rm573880";
-    private static final String PASSWORD = "250308";
+    private static final String USER = System.getenv("DB_USER");
+    private static final String PASSWORD = System.getenv("DB_PASSWORD");
 
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
